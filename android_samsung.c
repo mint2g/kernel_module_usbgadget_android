@@ -49,7 +49,6 @@
 #include "u_serial.c"
 #include "f_acm.c"
 #include "f_adb.c"
-#include "f_mtp_samsung.c"
 #include "f_accessory.c"
 
 #define USB_ETH_RNDIS y
@@ -100,6 +99,8 @@ struct android_usb_function {
 					struct usb_composite_dev *,
 					const struct usb_ctrlrequest *);
 };
+
+#include "f_mtp_samsung.c"
 
 struct android_dev {
 	struct android_usb_function **functions;
